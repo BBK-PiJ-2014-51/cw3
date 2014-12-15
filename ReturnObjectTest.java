@@ -1,4 +1,4 @@
-public class ReturnObjectTest {
+public class ReturnObjectTest extends Test{
 
 	public static void main(String[] args) {
 		ReturnObjectTest test = new ReturnObjectTest();
@@ -15,22 +15,4 @@ public class ReturnObjectTest {
 		//TO DO: add further testing
 	}
 	
-	private void testForExpectedValue(boolean result, boolean expectedResult, String testId){
-		System.out.print(testId + ": ");
-		if (result == expectedResult){
-			System.out.println("passed.");
-		} else {
-			System.out.println("FAILED. Result: " + String.valueOf(result) + ", expected: " + String.valueOf(expectedResult));
-		}
-	}
-	
-	private void testForExpectedValue(Object result, Object expectedResult, String testId){
-		System.out.print(testId + ": ");
-		if (result.equals(expectedResult)){
-			System.out.println("passed.");
-		} else {
-			System.out.println("FAILED. Result: " + result.toString() + ", expected: " + expectedResult.toString());
-		}
-		
-	}
 }

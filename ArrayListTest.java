@@ -1,4 +1,4 @@
-public class ArrayListTest {
+public class ArrayListTest extends Test{
 
 	public static void main(String[] args) {
 		ArrayListTest test = new ArrayListTest();
@@ -29,32 +29,4 @@ public class ArrayListTest {
 		
 	}
 	
-	//TO DO: add methods to super class for all tests
-	private void testForExpectedValue(boolean result, boolean expectedResult, String testId){
-		System.out.print(testId + ": ");
-		if (result == expectedResult){
-			System.out.println("passed.");
-		} else {
-			System.out.println("FAILED. Result: " + String.valueOf(result) + ", expected: " + String.valueOf(expectedResult));
-		}
-	}
-	
-	private void testForExpectedValue(int result, int expectedResult, String testId){
-		System.out.print(testId + ": ");
-		if (result == expectedResult){
-			System.out.println("passed.");
-		} else {
-			System.out.println("FAILED. Result: " + String.valueOf(result) + ", expected: " + String.valueOf(expectedResult));
-		}
-	}
-	
-	private void testForExpectedValue(Object result, Object expectedResult, String testId){
-		System.out.print(testId + ": ");
-		if (result.equals(expectedResult)){
-			System.out.println("passed.");
-		} else {
-			System.out.println("FAILED. Result: " + result.toString() + ", expected: " + expectedResult.toString());
-		}
-		
-	}
 }
