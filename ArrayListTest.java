@@ -14,15 +14,16 @@ public class ArrayListTest extends Test{
 		test.testForExpectedValue(arrayList.size(), initSize, "Test 03: checking size of loaded list");
 		arrayList.add(5, new Integer(13));
 		test.testForExpectedValue(arrayList.size(), initSize + 1, "Test 04: checking size of list after adding at specific index");
-		test.testForExpectedValue(arrayList.get(5), new Integer(13), "Test 05: checking value at index just added");
+		test.testForExpectedValue(arrayList.get(5).getReturnValue(), new Integer(13), "Test 05: checking value at index just added");
 		arrayList.remove(5);
 		test.testForExpectedValue(arrayList.size(), initSize, "Test 06: checking size after removal");
 		for (int i = initSize; i < maxSize; i++){
-			arrayList.add(i);
+			arrayList.add(new Integer(i));
 		}
 		boolean correctValues = true;
 		for (int i = 0; i < maxSize; i++){
-			if (!arrayList.get(i).equals(new Integer(i))) correctValues = false; 
+			System.out.println("Value at index " + i + " is " + String.valueOf(arrayList.get(i).getReturnValue()));
+			if (!arrayList.get(i).getReturnValue().equals(new Integer(i))) correctValues = false; 
 		}
 		test.testForExpectedValue(correctValues, true, "Test 07: checking values on longer loaded list");
 		
