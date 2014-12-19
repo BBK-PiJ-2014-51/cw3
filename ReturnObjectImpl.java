@@ -7,7 +7,7 @@ public class ReturnObjectImpl implements ReturnObject{
 	 * Constructor used to wrap error messages
 	 */
 	public ReturnObjectImpl(ErrorMessage msg){
-		hasError = true;
+		hasError = !(msg == ErrorMessage.NO_ERROR);
 		errMsg = msg;
 		returnValue = null;
 	}
