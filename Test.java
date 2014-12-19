@@ -19,7 +19,10 @@ public abstract class Test {
 	
 	protected void testForExpectedValue(Object result, Object expectedResult, String testId){
 		System.out.print(testId + ": ");
-		if (result.equals(expectedResult)){
+		if (result == expectedResult){
+			System.out.println("passed.");
+		}
+		else if (result.equals(expectedResult)){
 			System.out.println("passed.");
 		} else {
 			System.out.println("FAILED. Result: " + result.toString() + ", expected: " + expectedResult.toString());
