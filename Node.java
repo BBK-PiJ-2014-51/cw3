@@ -5,7 +5,7 @@ public interface Node {
 	 * 
 	 * @return next element in the list
 	 */
-	Object getNext();
+	Node getNext();
 	
 	/**
 	 * Sets the next element in the list
