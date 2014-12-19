@@ -5,7 +5,7 @@ public class ArrayListTest extends Test{
 		int initSize = 10;
 		int maxSize = 50;
 		
-		test.testForExpectedValue(arrayList.isEmpty(), true, "Test 01: isEmpty on new list");
+		test.testForExpectedValue(arrayList.isEmpty(), true, "Test 01: isEmpty on new list");		
 		for (int i = 0; i < initSize; i++){
 			arrayList.add(new Integer (i));
 		}
@@ -34,5 +34,8 @@ public class ArrayListTest extends Test{
 		test.testForExpectedValue(arrayList.add(null).hasError(), true, "Test 15: checking error presence whenn inserting a null value");
 		test.testForExpectedValue(arrayList.add(4,null).getError(), ErrorMessage.INVALID_ARGUMENT, "Test 16: checking error message on inserting a null value at specified index");
 		test.testForExpectedValue(arrayList.add(4,null).hasError(), true, "Test 17: checking error presence when inserting a null value at specified index");
+		arrayList = new ArrayList();
+		test.testForExpectedValue(arrayList.get(12).getError(), ErrorMessage.EMPTY_STRUCTURE, "Test 18: empty structure error when retrieving element from empty list");
+		test.testForExpectedValue(arrayList.remove(5).getError(),ErrorMessage.EMPTY_STRUCTURE , "Test 19: empty structure error when removing element from empty list");
 	}
 }
