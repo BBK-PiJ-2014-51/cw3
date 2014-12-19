@@ -1,5 +1,4 @@
 public class ArrayListTest extends Test{
-
 	public static void main(String[] args) {
 		ArrayListTest test = new ArrayListTest();
 		ArrayList arrayList = new ArrayList();
@@ -22,12 +21,14 @@ public class ArrayListTest extends Test{
 		}
 		boolean correctValues = true;
 		for (int i = 0; i < maxSize; i++){
-			System.out.println("Value at index " + i + " is " + String.valueOf(arrayList.get(i).getReturnValue()));
 			if (!arrayList.get(i).getReturnValue().equals(new Integer(i))) correctValues = false; 
 		}
 		test.testForExpectedValue(correctValues, true, "Test 07: checking values on longer loaded list");
-		
-		
+		test.testForExpectedValue(arrayList.get(-1).hasError(), true, "Test 08: checking error presence on retrieval of negative index");
+		test.testForExpectedValue(arrayList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS, "Test 09: checking error message on retrieval of negative index");
+		test.testForExpectedValue(arrayList.get(arrayList.size()).hasError(), true, "Test 10: checking error presence on retrieval of index greater than size of list");
+		test.testForExpectedValue(arrayList.get(arrayList.size()).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS, "Test 11: checking error message on retrieval of index greater than size of list");
+		test.testForExpectedValue(arrayList.get(arrayList.size()-1).hasError(), false, "Test 12: checking error presence on valid retrieval");
+		test.testForExpectedValue(arrayList.get(arrayList.size()-1).getError(), ErrorMessage.NO_ERROR, "Test 13: checking error message on valid retrieval");
 	}
-	
 }
