@@ -17,12 +17,14 @@ public class ArrayList implements List {
 
 	@Override
 	public ReturnObject get(int index) {
-		return (index < 0 || index >= size) ? new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS) : new ReturnObjectImpl(items[index]);
+		if (isEmpty()) return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+		else return (index < 0 || index >= size) ? new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS) : new ReturnObjectImpl(items[index]);
 	}
 
 	@Override
 	public ReturnObject remove(int index) {
-		if (index < 0 || index >= size) return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		if (isEmpty()) return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+		else if (index < 0 || index >= size) return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		ReturnObject removedObj = new ReturnObjectImpl(items[index]);
 		//set index removed and all subsequent indices to the next element
 		for (int i = index; i < size - 1; i++){
