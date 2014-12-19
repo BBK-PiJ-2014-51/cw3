@@ -30,5 +30,9 @@ public class ArrayListTest extends Test{
 		test.testForExpectedValue(arrayList.get(arrayList.size()).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS, "Test 11: checking error message on retrieval of index greater than size of list");
 		test.testForExpectedValue(arrayList.get(arrayList.size()-1).hasError(), false, "Test 12: checking error presence on valid retrieval");
 		test.testForExpectedValue(arrayList.get(arrayList.size()-1).getError(), ErrorMessage.NO_ERROR, "Test 13: checking error message on valid retrieval");
+		test.testForExpectedValue(arrayList.add(null).getError(), ErrorMessage.INVALID_ARGUMENT, "Test 14: checking error message on inserting a null value");
+		test.testForExpectedValue(arrayList.add(null).hasError(), true, "Test 15: checking error presence whenn inserting a null value");
+		test.testForExpectedValue(arrayList.add(4,null).getError(), ErrorMessage.INVALID_ARGUMENT, "Test 16: checking error message on inserting a null value at specified index");
+		test.testForExpectedValue(arrayList.add(4,null).hasError(), true, "Test 17: checking error presence when inserting a null value at specified index");
 	}
 }
