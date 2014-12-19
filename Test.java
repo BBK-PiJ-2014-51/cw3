@@ -23,7 +23,12 @@ public abstract class Test {
 			System.out.println("passed.");
 		} else {
 			System.out.println("FAILED. Result: " + result.toString() + ", expected: " + expectedResult.toString());
+		}		
+	}
+	
+	protected static void printList(List list){
+		for (int i =0; i < list.size(); i++){
+			System.out.println(String.valueOf(list.get(i).getReturnValue()));
 		}
-		
 	}
 }
