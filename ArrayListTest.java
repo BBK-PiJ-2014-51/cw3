@@ -37,5 +37,11 @@ public class ArrayListTest extends Test{
 		arrayList = new ArrayList();
 		test.testForExpectedValue(arrayList.get(12).getError(), ErrorMessage.EMPTY_STRUCTURE, "Test 18: empty structure error when retrieving element from empty list");
 		test.testForExpectedValue(arrayList.remove(5).getError(),ErrorMessage.EMPTY_STRUCTURE , "Test 19: empty structure error when removing element from empty list");
+		test.testForExpectedValue(arrayList.add(new Integer(65)).hasError(), false, "Test 20: adding element in list should not raise error");
+		test.testForExpectedValue(arrayList.add(new Integer(63)).getError(), ErrorMessage.NO_ERROR, "Test 21: adding element in list should not raise error");
+		test.testForExpectedValue(arrayList.add(new Integer(110)).getReturnValue(), null, "Test 22: adding element to end of list should return a null value");
+		test.testForExpectedValue(arrayList.add(1, new Integer(63)).hasError(), false, "Test 23: adding element to end of list should not raise error");
+		test.testForExpectedValue(arrayList.add(1, new Integer(112)).getReturnValue(), null, "Test 24: adding element to end of list should return a null value");
+		
 	}
 }
