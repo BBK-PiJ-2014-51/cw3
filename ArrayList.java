@@ -38,7 +38,7 @@ public class ArrayList implements List {
 		else if (item == null) return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		if (size == capacity) expandArray();
 		for (int i = size; i > index; i--){
-			items[i-1] = items[i];
+			items[i] = items[i-1];
 		}
 		items[index] = item;
 		size++;
