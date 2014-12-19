@@ -44,15 +44,15 @@ public class ArrayList implements List {
 		}
 		items[index] = item;
 		size++;
-		return new ReturnObjectImpl(items[index]);
+		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
 
 	@Override
 	public ReturnObject add(Object item) {
 		if (item == null) return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		if (size == capacity) expandArray();
-		items[size] = item;
-		return new ReturnObjectImpl(items[size++]);
+		items[size++] = item;
+		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
 	
 	private boolean expandArray(){
