@@ -31,7 +31,7 @@ public class ImprovedStackImpl implements ImprovedStack{
 	public ImprovedStack reverse() {
 		ImprovedStack reversedStack = new ImprovedStackImpl();
 		for (int i = 0; i < stack.size(); i++){
-			reversedStack.push(stack.pop());
+			reversedStack.push(stack.pop().getReturnValue());
 		}
 		return reversedStack;
 	}
@@ -40,7 +40,7 @@ public class ImprovedStackImpl implements ImprovedStack{
 	public void remove(Object object) {
 		ImprovedStack newStack = new ImprovedStackImpl();
 		for (int i = 0; i < stack.size(); i++){
-			if (!stack.top().getReturnValue().equals(object))newStack.push(stack.pop());
+			if (!stack.top().getReturnValue().equals(object))newStack.push(stack.pop().getReturnValue());
 			else stack.pop();
 		}
 		stack = newStack.reverse();
