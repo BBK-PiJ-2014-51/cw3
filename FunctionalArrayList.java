@@ -3,13 +3,15 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 
 	@Override
 	public ReturnObject head() {
-		// TODO Auto-generated method stub
-		return null;
+		return get(0);
 	}
 
 	@Override
 	public FunctionalList rest() {
-		// TODO Auto-generated method stub
-		return null;
+		FunctionalList rest = new FunctionalArrayList();
+		for (int i = 1; i < size(); i++){
+			rest.add(get(i).getReturnValue());
+		}
+		return rest;
 	}
 }
