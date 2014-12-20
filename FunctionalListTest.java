@@ -32,6 +32,11 @@ public class FunctionalListTest extends Test {
 			}
 			test.testForEqualLists(list.rest(), restTestList, true, "Test 08: rest call returns equivalent list");
 			test.testReference(list.rest(), restTestList, false, "Test 09: rest call returns different list in memory");
+			
+			restTestList = list.rest();
+			list.remove(2);
+			list.add(2, new Integer(22));
+			test.testForEqualLists(list.rest(), restTestList, false, "Test 10: list returned by rest does not share references with original list");
 		}
 	}				
 }
