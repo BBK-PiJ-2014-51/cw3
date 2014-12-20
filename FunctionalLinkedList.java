@@ -2,14 +2,16 @@
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 	@Override
 	public ReturnObject head() {
-		// TODO Auto-generated method stub
-		return null;
+		return get(0);
 	}
 
 	@Override
 	public FunctionalList rest() {
-		// TODO Auto-generated method stub
-		return null;
+		FunctionalList rest = new FunctionalLinkedList();
+		for (int i = 1; i < size(); i++){
+			rest.add(get(i).getReturnValue());
+		}
+		return rest;
 	}
 
 }
