@@ -1,45 +1,48 @@
 
 public class ImprovedStackImpl implements ImprovedStack{
-
+	Stack stack = new StackImpl(new LinkedList());
+	
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return stack.isEmpty();
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return stack.size();
 	}
 
 	@Override
 	public void push(Object item) {
-		// TODO Auto-generated method stub
-		
+		stack.push(item);
 	}
 
 	@Override
 	public ReturnObject top() {
-		// TODO Auto-generated method stub
-		return null;
+		return stack.top();
 	}
 
 	@Override
 	public ReturnObject pop() {
-		// TODO Auto-generated method stub
-		return null;
+		return stack.pop();
 	}
 
 	@Override
 	public ImprovedStack reverse() {
-		// TODO Auto-generated method stub
-		return null;
+		ImprovedStack reversedStack = new ImprovedStackImpl();
+		for (int i = 0; i < stack.size(); i++){
+			reversedStack.push(stack.pop());
+		}
+		return reversedStack;
 	}
 
 	@Override
 	public void remove(Object object) {
-		// TODO Auto-generated method stub
-		
+		ImprovedStack newStack = new ImprovedStackImpl();
+		for (int i = 0; i < stack.size(); i++){
+			if (!stack.top().getReturnValue().equals(object))newStack.push(stack.pop());
+			else stack.pop();
+		}
+		stack = newStack.reverse();
 	}
 }
