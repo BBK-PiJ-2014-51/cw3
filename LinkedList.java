@@ -39,8 +39,8 @@ public class LinkedList implements List{
 			Node previousValue = returnValue;
 			//get value to return
 			returnValue = previousValue.getNext();
-			//make previous value "skip" removed value, if it exists
-			if (returnValue.getNext() != null) previousValue.setNext(returnValue.getNext());	
+			//make previous value "skip" removed value
+			previousValue.setNext(returnValue.getNext());
 		}
 		size--;
 		return new ReturnObjectImpl(returnValue.getValue());
