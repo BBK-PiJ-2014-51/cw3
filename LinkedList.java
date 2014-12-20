@@ -1,22 +1,27 @@
  
 public class LinkedList implements List{
+	Node head = null;
+	int size = 0;
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return (size == 0);
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
 	@Override
 	public ReturnObject get(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		if (isEmpty()) return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+		if (index < 0 || index >= size) return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		Node returnValue = head;
+		for (int i = 0; i < index; i++){
+			returnValue = returnValue.getNext();
+		}
+		return new ReturnObjectImpl(returnValue.getValue());
 	}
 
 	@Override
