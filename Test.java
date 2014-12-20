@@ -35,6 +35,12 @@ public abstract class Test {
 		}
 	}
 	
+	protected static void popStack(Stack stack){
+		for (int i =0; stack.size() > 0; i++){
+			System.out.println(String.valueOf(stack.pop().getReturnValue()));
+		}
+	}
+	
 	protected void testForEqualLists(List listA, List listB, boolean expectedResult, String testId) {
 		System.out.print(testId + ": ");
 		boolean areEqual = true;
