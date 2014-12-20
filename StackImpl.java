@@ -7,32 +7,29 @@ public class StackImpl extends AbstractStack{
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return internalList.isEmpty();
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return internalList.size();
 	}
 
 	@Override
 	public void push(Object item) {
-		// TODO Auto-generated method stub
-		
+		internalList.add(item);
 	}
 
 	@Override
 	public ReturnObject top() {
-		// TODO Auto-generated method stub
-		return null;
+		return internalList.get(internalList.size() - 1);
 	}
 
 	@Override
 	public ReturnObject pop() {
-		// TODO Auto-generated method stub
-		return null;
+		ReturnObject top = top();
+		internalList.remove(internalList.size() - 1);
+		return top;
 	}
 
 }
