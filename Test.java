@@ -59,6 +59,24 @@ public abstract class Test {
 		}
 	}
 	
+	protected void testForEqualStacks(Stack stackA, Stack stackB, boolean expectedResult, String testId) {
+		System.out.print(testId + ": ");
+		boolean areEqual = true;
+		if (stackA.size() != stackB.size()) areEqual = false;
+		if (areEqual){
+			for (int i = 0; i < stackA.size(); i++){
+				if (!stackA.pop().getReturnValue().equals(stackB.pop().getReturnValue())) areEqual = false;
+			}
+		}
+		if (expectedResult){
+			if (areEqual) System.out.println("passed.");
+			else System.out.println("FAILED. Lists are not equal.");
+		} else {
+			if (!areEqual) System.out.println("passed.");
+			else System.out.println("FAILED. Lists are equal.");
+		}
+	}
+	
 	protected void testReference(Object a, Object b, boolean expectedResult, String testId){
 		System.out.print(testId + ": ");
 		if (expectedResult){
