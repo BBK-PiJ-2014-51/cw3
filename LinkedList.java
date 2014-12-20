@@ -26,20 +26,59 @@ public class LinkedList implements List{
 
 	@Override
 	public ReturnObject remove(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		if (isEmpty()) return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+		if (index < 0 || index >= size) return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		Node returnValue = head;
+		if (index == 0){
+			head = head.getNext();
+		} else {
+			//move returnValue up to value right before value to return
+			for (int i = 0; i < index - 1; i++){
+				returnValue = returnValue.getNext();
+			}
+			Node previousValue = returnValue;
+			//get value to return
+			returnValue = previousValue.getNext();
+			//make previous value "skip" removed value, if it exists
+			if (returnValue.getNext() != null) previousValue.setNext(returnValue.getNext());	
+		}
+		size--;
+		return new ReturnObjectImpl(returnValue.getValue());
 	}
 
 	@Override
 	public ReturnObject add(int index, Object item) {
-		// TODO Auto-generated method stub
-		return null;
+		if (index < 0 || index >= size) return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		if (item == null) return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+		Node newNode = new NodeImpl(item);
+		if(index == 0){
+			if (size > 0) newNode.setNext(head);
+			head = newNode;
+		} else {
+			Node currentNode = head;
+			for (int i = 0; i < index - 1; i++){
+				currentNode = currentNode.getNext();
+			}
+			newNode.setNext(currentNode.getNext());
+			currentNode.setNext(newNode);
+		}
+		size++;
+		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
 
 	@Override
 	public ReturnObject add(Object item) {
-		// TODO Auto-generated method stub
-		return null;
+		if (item == null) return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+		if (head == null) head = new NodeImpl(item);
+		else {
+			Node currentNode = head;
+			while (currentNode.getNext() != null){
+				currentNode= currentNode.getNext();
+			}
+			currentNode.setNext(new NodeImpl(item));
+		}
+		size++;
+		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
 
 }
