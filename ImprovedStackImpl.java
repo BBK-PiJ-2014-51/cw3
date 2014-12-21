@@ -30,9 +30,20 @@ public class ImprovedStackImpl implements ImprovedStack{
 	@Override
 	public ImprovedStack reverse() {
 		ImprovedStack reversedStack = new ImprovedStackImpl();
-		while( stack.size() > 0){
-			reversedStack.push(stack.pop().getReturnValue());
+		Object[] originalValues = new Object[stack.size()];
+		int index = stack.size() -1;
+		
+		while(stack.size() > 0){
+			Object currentValue =stack.pop().getReturnValue();
+			reversedStack.push(currentValue);
+			originalValues[index--] = currentValue; // save copy of value
 		}
+		index++;
+		
+		while (index < originalValues.length){ //restore values
+			stack.push(originalValues[index++]);
+		}
+		
 		return reversedStack;
 	}
 
