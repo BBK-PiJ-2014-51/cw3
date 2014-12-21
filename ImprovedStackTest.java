@@ -1,6 +1,5 @@
 
 public class ImprovedStackTest extends Test {
-
 	public static void main(String[] args) {
 		ImprovedStackTest test = new ImprovedStackTest();
 		ImprovedStack stack = new ImprovedStackImpl();
@@ -13,15 +12,12 @@ public class ImprovedStackTest extends Test {
 		for (int i = initSize -1; i >= 0; i--){
 			reversedStack.push(new Integer(i));
 		}
-		
 		test.testForEqualStacks(stack.reverse(), reversedStack, true, "Test 01: reverse should produce reversed stack");
-		
+		Test.popStack(stack, true);
 		for (int i = 0; i <= initSize; i++){
 			stack.push(new Integer((i % 2 == 0) ? 3 : i));
 		}
 		stack.remove(new Integer(3));
-		test.testForExpectedValue(stack.size(), 6, "Test 02: checking size after removing specified elements");
-		test.popStack(stack);		
+		test.testForExpectedValue(stack.size(), 5, "Test 02: checking size after removing specified elements");				
 	}
-
 }
