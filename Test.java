@@ -35,9 +35,10 @@ public abstract class Test {
 		}
 	}
 	
-	protected static void popStack(Stack stack){
+	protected static void popStack(Stack stack, boolean silent){
 		for (int i =0; stack.size() > 0; i++){
-			System.out.println(String.valueOf(stack.pop().getReturnValue()));
+			if (!silent) System.out.println(String.valueOf(stack.pop().getReturnValue()));
+			else stack.pop();
 		}
 	}
 	
