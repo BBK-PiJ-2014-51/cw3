@@ -38,10 +38,9 @@ public class ImprovedStackImpl implements ImprovedStack{
 			reversedStack.push(currentValue);
 			originalValues[index--] = currentValue; // save copy of value
 		}
-		index++;
 		
-		while (index < originalValues.length){ //restore values
-			stack.push(originalValues[index++]);
+		while (++index < originalValues.length){ //restore values
+			stack.push(originalValues[index]);
 		}
 		
 		return reversedStack;
