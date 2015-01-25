@@ -1,3 +1,10 @@
+package tests;
+import list.ArrayList;
+import list.LinkedList;
+import returnobject.ErrorMessage;
+import stack.Stack;
+import stack.StackImpl;
+
 public class StackTest extends Test{
 	public static void main(String[] args) {
 		StackTest test = new StackTest();

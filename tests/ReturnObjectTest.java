@@ -1,3 +1,8 @@
+package tests;
+import returnobject.ErrorMessage;
+import returnobject.ReturnObject;
+import returnobject.ReturnObjectImpl;
+
 public class ReturnObjectTest extends Test{
 
 	public static void main(String[] args) {

@@ -1,3 +1,6 @@
+package sampleablelist;
+import list.LinkedList;
+
 
 public class SampleableListImpl extends LinkedList implements SampleableList{
 	@Override

@@ -1,3 +1,7 @@
+package functionallist;
+import list.LinkedList;
+import returnobject.ReturnObject;
+
 
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 	@Override

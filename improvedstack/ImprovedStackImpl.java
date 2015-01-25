@@ -1,3 +1,9 @@
+package improvedstack;
+import list.LinkedList;
+import returnobject.ReturnObject;
+import stack.Stack;
+import stack.StackImpl;
+
 
 public class ImprovedStackImpl implements ImprovedStack{
 	Stack stack = new StackImpl(new LinkedList());

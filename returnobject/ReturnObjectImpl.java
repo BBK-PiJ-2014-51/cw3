@@ -1,3 +1,5 @@
+package returnobject;
+
 public class ReturnObjectImpl implements ReturnObject{
 	private boolean hasError;
 	private ErrorMessage errMsg;

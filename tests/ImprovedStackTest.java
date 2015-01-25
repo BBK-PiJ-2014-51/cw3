@@ -1,3 +1,7 @@
+package tests;
+import improvedstack.ImprovedStack;
+import improvedstack.ImprovedStackImpl;
+
 
 public class ImprovedStackTest extends Test {
 	public static void main(String[] args) {

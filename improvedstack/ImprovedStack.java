@@ -1,3 +1,6 @@
+package improvedstack;
+import stack.Stack;
+
 /**
  * An implementation of a stack with additional methods. 
  * 

@@ -1,3 +1,7 @@
+package tests;
+import stack.Stack;
+import list.List;
+
 public abstract class Test {
 	protected void testForExpectedValue(boolean result, boolean expectedResult, String testId){
 		System.out.print(testId + ": ");

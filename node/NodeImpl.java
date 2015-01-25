@@ -1,3 +1,4 @@
+package node;
 
 public class NodeImpl implements Node{
 	private Node next;

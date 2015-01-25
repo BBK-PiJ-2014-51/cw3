@@ -1,3 +1,6 @@
+package sampleablelist;
+import list.List;
+
 /**
  * A sampleable list can be sampled. 
  * 

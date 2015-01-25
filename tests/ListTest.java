@@ -1,3 +1,9 @@
+package tests;
+import list.ArrayList;
+import list.LinkedList;
+import list.List;
+import returnobject.ErrorMessage;
+
 public class ListTest extends Test{
 	public static void main(String[] args) {
 		ListTest test = new ListTest();

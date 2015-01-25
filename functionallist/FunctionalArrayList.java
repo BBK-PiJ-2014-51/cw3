@@ -1,3 +1,7 @@
+package functionallist;
+import list.ArrayList;
+import returnobject.ReturnObject;
+
 
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
 

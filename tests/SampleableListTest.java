@@ -1,3 +1,7 @@
+package tests;
+import sampleablelist.SampleableList;
+import sampleablelist.SampleableListImpl;
+
 
 public class SampleableListTest extends Test{
 

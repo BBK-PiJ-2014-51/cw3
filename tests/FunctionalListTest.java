@@ -1,3 +1,10 @@
+package tests;
+import functionallist.FunctionalArrayList;
+import functionallist.FunctionalLinkedList;
+import functionallist.FunctionalList;
+import list.List;
+import returnobject.ErrorMessage;
+
 
 public class FunctionalListTest extends Test {
 	public static void main(String[] args) {
