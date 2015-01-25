@@ -2,22 +2,38 @@ package tests;
 import returnobject.ErrorMessage;
 import returnobject.ReturnObject;
 import returnobject.ReturnObjectImpl;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
-public class ReturnObjectTest extends Test{
-
-	public static void main(String[] args) {
-		ReturnObjectTest test = new ReturnObjectTest();
-		
-		// constructors
-		ReturnObject returnValue = new ReturnObjectImpl(new Integer(3));
-		ReturnObject returnErr = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-		
-		test.testForExpectedValue(returnValue.hasError(), false, "Test 01: hasError on returned value");
-		test.testForExpectedValue(returnErr.hasError(), true, "Test 02: hasError on returned error");
-		test.testForExpectedValue(returnValue.getReturnValue(), new Integer(3), "Test 03: getReturnValue on returns value passed in");
-		test.testForExpectedValue(returnErr.getError(), ErrorMessage.INVALID_ARGUMENT, "Test 04: getError returns error previously set");
-		
-		//TO DO: add further testing
+public class ReturnObjectTest{
+	ReturnObject returnValue;
+	ReturnObject returnErr;
+	
+	@Before
+	public void build(){
+		returnValue = new ReturnObjectImpl(new Integer(3));
+		returnErr = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+	}
+	
+	@Test
+	public void validInputHasError(){
+		assertEquals(false, returnValue.hasError());
+	}
+	
+	@Test
+	public void validInputReturnsValue(){
+		assertEquals(new Integer(3), returnValue.getReturnValue());
+	}
+	
+	@Test
+	public void errorHasError(){
+		assertEquals(true, returnErr.hasError());
+	}
+	
+	@Test
+	public void errorReturnsError(){
+		assertEquals(ErrorMessage.INVALID_ARGUMENT, returnErr.getError());
 	}
 	
 }
