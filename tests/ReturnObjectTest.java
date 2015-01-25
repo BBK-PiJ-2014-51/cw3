@@ -27,6 +27,11 @@ public class ReturnObjectTest{
 	}
 	
 	@Test
+	public void validInputReturnsNoError(){
+		assertEquals(ErrorMessage.NO_ERROR, returnValue.getError());
+	}
+	
+	@Test
 	public void errorHasError(){
 		assertEquals(true, returnErr.hasError());
 	}
@@ -34,6 +39,11 @@ public class ReturnObjectTest{
 	@Test
 	public void errorReturnsError(){
 		assertEquals(ErrorMessage.INVALID_ARGUMENT, returnErr.getError());
+	}
+	
+	@Test
+	public void errorReturnsNullValue(){
+		assertEquals(null, returnErr.getReturnValue());
 	}
 	
 }
