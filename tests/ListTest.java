@@ -1,10 +1,38 @@
 package tests;
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized.Parameters;
+import org.junit.runners.Parameterized;
+import static org.junit.Assert.assertEquals;
 import list.ArrayList;
 import list.LinkedList;
 import list.List;
 import returnobject.ErrorMessage;
+import org.junit.Before;
+import org.junit.Test;
 
-public class ListTest extends Test{
+@RunWith(Parameterized.class)
+public class ListTest{
+	@Parameters
+	public static Collection<Object[]> data() {
+		Object[][] data = new Object[][] { { new ArrayList() }, { new LinkedList() } };
+		return Arrays.asList(data);
+	}
+	
+	private List list;
+	
+	public ListTest(List list){
+		this.list = list;
+	}
+	
+	@Test
+	public void isEmptyOnEmptyList(){
+		assertEquals(true, list.isEmpty());
+	}
+	
+	/* old tests
 	public static void main(String[] args) {
 		ListTest test = new ListTest();
 		List list = new ArrayList();
@@ -65,5 +93,7 @@ public class ListTest extends Test{
 			System.out.println("Printing List");
 			test.printList(list);
 		}
-	}		
+		
+		
+	}	*/	
 }
