@@ -4,12 +4,19 @@ import returnobject.ReturnObject;
 
 
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
-
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public ReturnObject head() {
 		return get(0);
 	}
 
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public FunctionalList rest() {
 		FunctionalList rest = new FunctionalArrayList();

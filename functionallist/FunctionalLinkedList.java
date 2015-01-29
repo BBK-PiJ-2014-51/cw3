@@ -4,11 +4,19 @@ import returnobject.ReturnObject;
 
 
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public ReturnObject head() {
 		return get(0);
 	}
 
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public FunctionalList rest() {
 		FunctionalList rest = new FunctionalLinkedList();
