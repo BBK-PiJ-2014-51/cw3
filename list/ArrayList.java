@@ -9,23 +9,38 @@ public class ArrayList implements List {
 	private int capacity = 10;
 	private Object[] items = new Object[capacity];
 	
-	
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public boolean isEmpty() {
 		return (size == 0);
 	}
 
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public int size() {
 		return size;
 	}
 
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public ReturnObject get(int index) {
 		if (isEmpty()) return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 		else return (index < 0 || index >= size) ? new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS) : new ReturnObjectImpl(items[index]);
 	}
 
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public ReturnObject remove(int index) {
 		if (isEmpty()) return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
@@ -39,6 +54,10 @@ public class ArrayList implements List {
 		return removedObj;
 	}
 
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public ReturnObject add(int index, Object item) {
 		if (index < 0 || index >= size) return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -52,6 +71,10 @@ public class ArrayList implements List {
 		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
 
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public ReturnObject add(Object item) {
 		if (item == null) return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
@@ -60,6 +83,11 @@ public class ArrayList implements List {
 		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
 	
+	/**
+	 * Doubles current capacity of array
+	 * 
+	 * @return true if operation is successful
+	 */
 	private boolean expandArray(){
 		Object[] newArray = new Object[capacity * 2];
 		for (int i = 0; i < size; i++){
