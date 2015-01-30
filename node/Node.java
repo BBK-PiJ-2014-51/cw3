@@ -6,7 +6,7 @@ public interface Node {
 	 * 
 	 * @return next element in the list
 	 */
-	Node getNext();
+	public Node getNext();
 	
 	/**
 	 * Sets the next element in the list
@@ -14,14 +14,14 @@ public interface Node {
 	 * @param element to be added to the list
 	 * @return true if added to the list, false otherwise
 	 */
-	boolean setNext(Node next);
+	public boolean setNext(Node next);
 	
 	/**
 	 * Gets object stored in node of list
 	 * 
 	 * @return object stored in node
 	 */
-	Object getValue();
+	public Object getValue();
 	
 	/**
 	 * Stores object in node
@@ -29,5 +29,5 @@ public interface Node {
 	 * @param object to be stored in the node
 	 * @return false if object is stored, false otherwise
 	 */
-	boolean setValue(Object value);
+	public boolean setValue(Object value);
 }
