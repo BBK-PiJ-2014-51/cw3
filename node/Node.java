@@ -10,6 +10,7 @@ public interface Node {
 	
 	/**
 	 * Sets the next element in the list
+	 * 
 	 * @param element to be added to the list
 	 * @return true if added to the list, false otherwise
 	 */
@@ -17,12 +18,14 @@ public interface Node {
 	
 	/**
 	 * Gets object stored in node of list
+	 * 
 	 * @return object stored in node
 	 */
 	Object getValue();
 	
 	/**
 	 * Stores object in node
+	 * 
 	 * @param object to be stored in the node
 	 * @return false if object is stored, false otherwise
 	 */
