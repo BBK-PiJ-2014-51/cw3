@@ -3,6 +3,11 @@ import list.LinkedList;
 
 
 public class SampleableListImpl extends LinkedList implements SampleableList{
+	
+	/**
+	 * @inheritDoc
+	 * 
+	 */
 	@Override
 	public SampleableList sample() {
 		SampleableList sample = new SampleableListImpl();
