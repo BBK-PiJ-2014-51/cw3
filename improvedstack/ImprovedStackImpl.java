@@ -1,12 +1,30 @@
 package improvedstack;
 import list.LinkedList;
+import list.List;
 import returnobject.ReturnObject;
 import stack.Stack;
 import stack.StackImpl;
 
 
 public class ImprovedStackImpl implements ImprovedStack{
-	Stack stack = new StackImpl(new LinkedList());
+private Stack stack;
+	
+	/**
+	 * Constructor implementing underlying stack as a link list.
+	 * 
+	 */
+	public ImprovedStackImpl(){
+		stack = new StackImpl(new LinkedList()); 
+	}
+	
+	/**
+	 * Constructor uses supplied list to implement underlying stack.
+	 * 
+	 * @param list
+	 */
+	public ImprovedStackImpl(List list){
+		stack = new StackImpl(list);
+	}
 	
 	/**
 	 * @inheritDoc
