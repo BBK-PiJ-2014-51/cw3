@@ -148,6 +148,14 @@ public class ListTest{
 	}
 	
 	@Test
+	public void removingThenAddingAtEnd(){
+		initList();
+		list.remove(list.size()-1);
+		list.add(new Integer(20));
+		assertEquals(new Integer(20),list.get(INIT_SIZE -1).getReturnValue());
+	}
+	
+	@Test
 	public void hasErrorValidRemove(){
 		initList();
 		assertEquals(false, list.remove(4).hasError());

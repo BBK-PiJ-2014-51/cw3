@@ -7,8 +7,8 @@ import returnobject.ReturnObjectImpl;
 
  
 public class LinkedList implements List{
-	Node head = null;
-	int size = 0;
+	private Node head = null;
+	private int size = 0;
 
 	/**
 	 * @inheritDoc
@@ -55,14 +55,11 @@ public class LinkedList implements List{
 		if (index == 0){
 			head = head.getNext();
 		} else {
-			//move returnValue up to value right before value to return
+			Node previousValue = head;
 			for (int i = 0; i < index - 1; i++){
-				returnValue = returnValue.getNext();
+				previousValue = previousValue.getNext();
 			}
-			Node previousValue = returnValue;
-			//get value to return
 			returnValue = previousValue.getNext();
-			//make previous value "skip" removed value
 			previousValue.setNext(returnValue.getNext());
 		}
 		size--;
@@ -79,7 +76,7 @@ public class LinkedList implements List{
 		if (item == null) return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		Node newNode = new NodeImpl(item);
 		if(index == 0){
-			if (size > 0) newNode.setNext(head);
+			newNode.setNext(head);
 			head = newNode;
 		} else {
 			Node currentNode = head;
