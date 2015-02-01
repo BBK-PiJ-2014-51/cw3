@@ -7,7 +7,7 @@ import stack.StackImpl;
 
 
 public class ImprovedStackImpl implements ImprovedStack{
-private Stack stack;
+	private Stack stack;
 	
 	/**
 	 * Constructor implementing underlying stack as a link list.

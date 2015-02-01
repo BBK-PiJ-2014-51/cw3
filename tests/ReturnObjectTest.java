@@ -7,8 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ReturnObjectTest{
-	ReturnObject returnValue;
-	ReturnObject returnErr;
+	private ReturnObject returnValue;
+	private ReturnObject returnErr;
 	
 	@Before
 	public void build(){
