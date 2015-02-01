@@ -45,7 +45,7 @@ public class ImprovedStackTest{
 		for (int i = INIT_SIZE -1; i >= 0; i--){
 			reversedStack.push(new Integer(i));
 		}
-		
+		stack = stack.reverse();
 		boolean allEqual = true;
 		for (int i = 0; i < INIT_SIZE; i++){
 			if(!stack.pop().getReturnValue().equals(reversedStack.pop().getReturnValue())) allEqual = false;
