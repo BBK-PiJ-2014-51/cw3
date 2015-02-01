@@ -7,7 +7,7 @@ import org.junit.Test;
 
 
 public class NodeTest{
-	Node node1;
+	private Node node1;
 	
 	@Before
 	public void build(){
